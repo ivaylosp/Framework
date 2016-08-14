@@ -6,45 +6,66 @@
     Description:
     Main functionality for the chopper service paid, to be replaced in later version.
 */
-private ["_serviceCost"];
+private["_serviceCost","_action","_aircraft","_ui","_progress","_cP","_pgText"];
+
 disableSerialization;
-private["_search","_ui","_progress","_cP","_pgText"];
+
 if (life_action_inUse) exitWith {hint localize "STR_NOTF_Action"};
 
 _serviceCost = LIFE_SETTINGS(getNumber,"service_chopper");
-_search = nearestObjects[getPos air_sp, ["Air"],10];
+_aircraft = nearestObjects[getPos air_sp, ["Air"],15];
 
-if (count _search isEqualTo 0) exitWith {hint localize "STR_Service_Chopper_NoAir"};
-if (CASH < _serviceCost) exitWith {hint localize "STR_Serive_Chopper_NotEnough"};
+if (count _aircraft isEqualTo 0) exitWith {hint localize "STR_Service_Aircraft_NoAir"};
+if (CASH < _serviceCost) exitWith {hint format[localize "STR_Serive_Aircraft_NotEnough",_serviceCost]};
+_aircraft = _aircraft select 0;
+if (fuel _aircraft == 1 && getDammage _aircraft == 0) exitWith {hint localize "STR_Serive_Aircraft_NotNeeded"};
 
 life_action_inUse = true;
-5 cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
-_progress = _ui displayCtrl 38201;
-_pgText = _ui displayCtrl 38202;
-_pgText ctrlSetText format[localize "STR_Service_Chopper_Servicing","waiting..."];
-_progress progressSetPosition 0.01;
-_cP = 0.01;
 
-for "_i" from 0 to 1 step 0 do {
-    sleep  0.2;
-    _cP = _cP + 0.01;
-    _progress progressSetPosition _cP;
-    _pgText ctrlSetText format[localize "STR_Service_Chopper_Servicing",round(_cP * 100)];
-    if (_cP >= 1) exitWith {};
-};
+_action = [
+    format [localize "STR_NOTF_AIR_SERVICE_PopUp",[_serviceCost] call life_fnc_numberText],
+    localize "STR_NOTF_AIR_SERVICE_TITLE",
+    localize "STR_Global_Yes",
+    localize "STR_Global_No"
+] call BIS_fnc_guiMessage;
 
-if (!alive (_search select 0) || (_search select 0) distance air_sp > 15) exitWith {life_action_inUse = false; hint localize "STR_Service_Chopper_Missing"};
+if (_action) then {
+    closeDialog 0;
+    5 cutRsc ["life_progress","PLAIN",2];
+    _ui = uiNamespace getVariable "life_progress";
+    _progress = _ui displayCtrl 38201;
+    _pgText = _ui displayCtrl 38202;
+    _pgText ctrlSetText format[localize "STR_Service_Aircraft_Servicing","waiting..."];
+    _progress progressSetPosition 0.01;
 
-CASH = CASH - _serviceCost;
-if (!local (_search select 0)) then {
-    [(_search select 0),1] remoteExecCall ["life_fnc_setFuel",(_search select 0)];
+    for "_cP" from 0 to 100 step 1 do {
+        sleep  0.2;
+        _progress progressSetPosition _cP/100;
+        _pgText ctrlSetText format[localize "STR_Service_Aircraft_Servicing",_cP,"%"];
+
+        if (!alive player || !alive _aircraft || _aircraft distance air_sp > 15) exitWith {
+            life_action_inUse = false;
+            5 cutText ["", "PLAIN"];
+            hint localize "STR_Service_Aircraft_Missing"
+        };
+
+        if (_cP == 100) then {
+            CASH = CASH - _serviceCost;
+            if (!local _aircraft) then {
+                [_aircraft,1] remoteExecCall ["life_fnc_setFuel",_aircraft];
+            } else {
+                _aircraft setFuel 1;
+            };
+
+            _aircraft setDamage 0;
+
+            5 cutText ["","PLAIN"];
+            titleText [localize "STR_Service_Aircraft_Done","PLAIN"];
+        };
+    };
 } else {
-    (_search select 0) setFuel 1;
+    hint localize "STR_NOTF_ActionCancel";
+    closeDialog 0;
 };
 
-(_search select 0) setDamage 0;
-
-5 cutText ["","PLAIN"];
-titleText [localize "STR_Service_Chopper_Done","PLAIN"];
 life_action_inUse = false;

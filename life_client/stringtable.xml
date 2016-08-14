@@ -3088,6 +3088,28 @@
             <Portuguese>Você não tem R$%1 para ser curado</Portuguese>
             <Polish>Nie masz $%1 na leczenie</Polish>
         </Key>
+        <Key ID="STR_NOTF_AIR_SERVICE_TITLE">
+            <Original>Air Service Station</Original>
+            <Czech>Vzduch servisní centrum</Czech>
+            <French>Centre de services air</French>
+            <Spanish>Estación de servicio aéreo</Spanish>
+            <Italian>Servizio centro aria</Italian>
+            <Polish>Powietrze centrum usług</Polish>
+            <Portuguese>Estação de Serviço Air</Portuguese>
+            <Russian>Воздушный станция технического обслуживания</Russian>
+            <German>Luft Servicezentrum</German>
+        </Key>
+        <Key ID="STR_NOTF_AIR_SERVICE_PopUp">
+            <Original>Spend $%1 to service your aircraft?</Original>
+            <Czech>Útrata $%1 do provozu své letadlo?</Czech>
+            <French>Donnez $%1 au service de votre avion?</French>
+            <Spanish>Gastar $%1 para dar servicio a su avión?</Spanish>
+            <Italian>Spendere $%1 per riparare il velivolo?</Italian>
+            <Polish>Wydać $%1 do serwisowania samolotów?</Polish>
+            <Portuguese>Gastar US $%1 a manutenção de sua aeronave?</Portuguese>
+            <Russian>Потратит $%1, для обслуживания Вашего самолета?</Russian>
+            <German>Spend $%1 service ihr flugzeug?</German>
+        </Key>
         <Key ID="STR_NOTF_HS_FullHealth">
             <Original>You do not need to be healed!</Original>
             <Czech>Nemusíte být uzdraven!</Czech>
@@ -5909,60 +5931,71 @@
         </Key>
     </Package>
     <Package name="Vehicle_Service">
-        <Key ID="STR_Service_Chopper_NoAir">
-            <Original>There isn't a chopper on the helipad!</Original>
-            <Czech>Není vrtulník na přistávací plocha pro vrtulník!</Czech>
-            <Spanish>No hay un helicóptero en el Helipad.</Spanish>
-            <Russian></Russian>
-            <German>Es ist kein Helikopter auf dem Landeplatz </German>
-            <French>Il n'y a pas d'hélicoptère sur l'héliport</French>
-            <Italian>Non c'è alcun elicottero sulla piazzola d'atterraggio</Italian>
+        <Key ID="STR_Service_Aircraft_NoAir">
+            <Original>There isn't a aircraft on the helipad!</Original>
+            <Czech>Není letadlo na přistávací plocha pro vrtulník!</Czech>
+            <Spanish>No hay un aeronave en el Helipad.</Spanish>
+            <Russian>Существует не самолет на вертолетной!</Russian>
+            <German>Es ist kein flugzeug auf dem landeplatz </German>
+            <French>Il n'y a pas d'avion sur l'héliport</French>
+            <Italian>Non c'è alcun aereo sulla piazzola d'atterraggio</Italian>
             <Portuguese>Não existe uma aeronave no heliponto!</Portuguese>
-            <Polish>W pobliżu nie ma helikoptera!</Polish>
+            <Polish>W pobliżu nie ma samolot!</Polish>
         </Key>
-        <Key ID="STR_Serive_Chopper_NotEnough">
-            <Original>You need $1,000 to service your chopper</Original>
-            <Czech>Musíte $ 1,000 servisních kontrol vrtulník</Czech>
-            <Spanish>Necesitas $1,000 para reparar el helicóptero.</Spanish>
-            <Russian></Russian>
-            <German>Du benötigst $1,000, um deinen Helikopter zu warten</German>
-            <French>Vous devez $1000 pour l'entretien de votre hélicoptère</French>
-            <Italian>Necessiti di $1.000 per fare manutenzione al tuo elicottero</Italian>
-            <Portuguese>Você precisa de R$1.000 para reparar a sua aeronave</Portuguese>
-            <Polish>Potrzebujesz $1000 aby serwisować helikopter</Polish>
+        <Key ID="STR_Serive_Aircraft_NotEnough">
+            <Original>You need $%1 to service your aircraft</Original>
+            <Czech>Musíte $%1 servisních kontrol letadlo</Czech>
+            <Spanish>Necesitas $%1 para reparar el aeronave.</Spanish>
+            <Russian>Вам нужно $%1 для обслуживания Вашего самолета</Russian>
+            <German>Du benötigst $%1, um deinen flugzeug zu warten</German>
+            <French>Vous devez $%1 pour l'entretien de votre d`avion</French>
+            <Italian>Necessiti di $%1 per fare manutenzione al tuo aereo</Italian>
+            <Portuguese>Você precisa de $%1 para reparar a sua aeronave</Portuguese>
+            <Polish>Potrzebujesz $%1 aby serwisować samolot</Polish>
         </Key>
-        <Key ID="STR_Service_Chopper_Servicing">
-            <Original>Servicing Chopper [%1]...</Original>
-            <Czech>Servis Chopper [%1] ...</Czech>
-            <Spanish>Reparando Helicóptero [%1]...</Spanish>
-            <Russian></Russian>
-            <German>Helikopter wird gewartet [%1]...</German>
-            <French>Entretien [%1]...</French>
-            <Italian>Manutenendo Elicottero [%1]...</Italian>
-            <Portuguese>Reparando aeronave [%1]...</Portuguese>
-            <Polish>Serwisuję helikopter [%1]...</Polish>
+        <Key ID="STR_Service_Aircraft_Servicing">
+            <Original>Servicing aircraft (%1%2)...</Original>
+            <Czech>Servis letadlo (%1%2) ...</Czech>
+            <Spanish>Reparando aeronave (%1%2)...</Spanish>
+            <Russian>Техническое обслуживание воздушных судов (%1%2)...</Russian>
+            <German>Flugzeug wird gewartet (%1%2)...</German>
+            <French>Entretien d`avion (%1%2)...</French>
+            <Italian>Manutenzione aereo (%1%2)...</Italian>
+            <Portuguese>Reparando aeronave (%1%2)...</Portuguese>
+            <Polish>Serwisuję samolot (%1%2)...</Polish>
         </Key>
-        <Key ID="STR_Service_Chopper_Missing">
+        <Key ID="STR_Service_Aircraft_Missing">
             <Original>The vehicle is no longer alive or on the helipad!</Original>
             <Czech>Vozidlo je již nežije nebo na přistávací plocha pro vrtulník!</Czech>
             <Spanish>El vehiculo no esta vivo o en el helipad!</Spanish>
-            <Russian></Russian>
+            <Russian>Транспортное средство уже не в живых или на вертолетной!</Russian>
             <German>Das Fahrzeug wurde zerstört oder befindest sich nicht mehr auf dem Helikopterlandeplatz!</German>
             <French>L'hélicoptère est détruit ou n'est plus sur l'héliport!</French>
             <Italian>Il veicolo non è più attivo sulla piazzola d'atterraggio!</Italian>
             <Portuguese>"A aeronave não está mais disponível no heliponto!</Portuguese>
             <Polish>Pojazd nie jest dłużej dostępny na lądowisku</Polish>
         </Key>
-        <Key ID="STR_Service_Chopper_Done">
-            <Original>Your chopper is now repaired and refuelled.</Original>
-            <Czech>Váš vrtulník není opraveno a tankovat.</Czech>
-            <Spanish>Tu helicóptero esta reparado y lleno de combustible.</Spanish>
-            <Russian></Russian>
-            <German>Der Helicopter ist nun repariert und aufgetankt.</German>
-            <French>Votre hélicoptère est maintenant réparé et ravitaillé</French>
-            <Italian>L'elicottero è stato riparato e rifornito di carburante.</Italian>
+        <Key ID="STR_Service_Aircraft_Done">
+            <Original>Your aircraft is now repaired and refuelled.</Original>
+            <Czech>Váš letadlo není opraveno a tankovat.</Czech>
+            <Spanish>Tu aeronave esta reparado y lleno de combustible.</Spanish>
+            <Russian>Ваш самолет не ремонтируются и заправляться.</Russian>
+            <German>Der flugzeug ist nun repariert und aufgetankt.</German>
+            <French>Votre d`avion est maintenant réparé et ravitaillé</French>
+            <Italian>L`aereo è stato riparato e rifornito di carburante.</Italian>
             <Portuguese>Sua aeronave está reparada e com o tanque cheio!</Portuguese>
-            <Polish>Helikopter został naprawiony i natankowany</Polish>
+            <Polish>Samolot został naprawiony i natankowany</Polish>
+        </Key>
+        <Key ID="STR_Serive_Aircraft_NotNeeded">
+            <Original>There is no need servicing your aircraft!</Original>
+            <Czech>Není třeba opravovat své letadlo</Czech>
+            <Spanish>No es necesario el mantenimiento de su aeronave</Spanish>
+            <Russian>Не е необходимо обслужване на самолети</Russian>
+            <German>Es gibt keine Notwendigkeit, Ihre Flugzeug Wartung</German>
+            <French>Il n'y a pas besoin d'entretien de votre avion</French>
+            <Italian>Non c'è bisogno di manutenzione il vostro aereo</Italian>
+            <Portuguese>Não há necessidade de manutenção do avião</Portuguese>
+            <Polish>Nie ma potrzeby serwisowania samolotów</Polish>
         </Key>
     </Package>
     <Package name="Life_Items">
