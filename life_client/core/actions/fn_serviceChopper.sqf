@@ -16,9 +16,9 @@ _serviceCost = LIFE_SETTINGS(getNumber,"service_chopper");
 _aircraft = nearestObjects[getPos air_sp, ["Air"],15];
 
 if (count _aircraft isEqualTo 0) exitWith {hint localize "STR_Service_Aircraft_NoAir"};
-if (CASH < _serviceCost) exitWith {hint format[localize "STR_Serive_Aircraft_NotEnough",_serviceCost]};
+if (CASH < _serviceCost) exitWith {hint format[localize "STR_Service_Aircraft_NotEnough",_serviceCost]};
 _aircraft = _aircraft select 0;
-if (fuel _aircraft == 1 && getDammage _aircraft == 0) exitWith {hint localize "STR_Serive_Aircraft_NotNeeded"};
+if (fuel _aircraft isEqualTo 1 && getDammage _aircraft isEqualTo 0) exitWith {hint localize "STR_Service_Aircraft_NotNeeded"};
 
 life_action_inUse = true;
 
@@ -49,7 +49,7 @@ if (_action) then {
             hint localize "STR_Service_Aircraft_Missing"
         };
 
-        if (_cP == 100) then {
+        if (_cP isEqualTo 100) then {
             CASH = CASH - _serviceCost;
             if (!local _aircraft) then {
                 [_aircraft,1] remoteExecCall ["life_fnc_setFuel",_aircraft];

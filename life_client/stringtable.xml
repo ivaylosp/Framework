@@ -3097,7 +3097,7 @@
             <Polish>Powietrze centrum usług</Polish>
             <Portuguese>Estação de Serviço Air</Portuguese>
             <Russian>Воздушный станция технического обслуживания</Russian>
-            <German>Luft Servicezentrum</German>
+            <German>Luftfahrzeug werkstatt</German>
         </Key>
         <Key ID="STR_NOTF_AIR_SERVICE_PopUp">
             <Original>Spend $%1 to service your aircraft?</Original>
@@ -3108,7 +3108,7 @@
             <Polish>Wydać $%1 do serwisowania samolotów?</Polish>
             <Portuguese>Gastar US $%1 a manutenção de sua aeronave?</Portuguese>
             <Russian>Потратит $%1, для обслуживания Вашего самолета?</Russian>
-            <German>Spend $%1 service ihr flugzeug?</German>
+            <German>Soll dein Luftfahrzeug für $%1 repariert werden?</German>
         </Key>
         <Key ID="STR_NOTF_HS_FullHealth">
             <Original>You do not need to be healed!</Original>
@@ -5936,18 +5936,18 @@
             <Czech>Není letadlo na přistávací plocha pro vrtulník!</Czech>
             <Spanish>No hay un aeronave en el Helipad.</Spanish>
             <Russian>Существует не самолет на вертолетной!</Russian>
-            <German>Es ist kein flugzeug auf dem landeplatz </German>
+            <German>Es befindet sich kein Luftfahrzeug auf dem Landeplatz</German>
             <French>Il n'y a pas d'avion sur l'héliport</French>
             <Italian>Non c'è alcun aereo sulla piazzola d'atterraggio</Italian>
             <Portuguese>Não existe uma aeronave no heliponto!</Portuguese>
             <Polish>W pobliżu nie ma samolot!</Polish>
         </Key>
-        <Key ID="STR_Serive_Aircraft_NotEnough">
+        <Key ID="STR_Service_Aircraft_NotEnough">
             <Original>You need $%1 to service your aircraft</Original>
             <Czech>Musíte $%1 servisních kontrol letadlo</Czech>
             <Spanish>Necesitas $%1 para reparar el aeronave.</Spanish>
             <Russian>Вам нужно $%1 для обслуживания Вашего самолета</Russian>
-            <German>Du benötigst $%1, um deinen flugzeug zu warten</German>
+            <German>Du benötigst $%1, um dein Luftfahrzeug zu warten</German>
             <French>Vous devez $%1 pour l'entretien de votre d`avion</French>
             <Italian>Necessiti di $%1 per fare manutenzione al tuo aereo</Italian>
             <Portuguese>Você precisa de $%1 para reparar a sua aeronave</Portuguese>
@@ -5958,7 +5958,7 @@
             <Czech>Servis letadlo (%1%2) ...</Czech>
             <Spanish>Reparando aeronave (%1%2)...</Spanish>
             <Russian>Техническое обслуживание воздушных судов (%1%2)...</Russian>
-            <German>Flugzeug wird gewartet (%1%2)...</German>
+            <German>Luftfahrzeug wird gewartet (%1%2)...</German>
             <French>Entretien d`avion (%1%2)...</French>
             <Italian>Manutenzione aereo (%1%2)...</Italian>
             <Portuguese>Reparando aeronave (%1%2)...</Portuguese>
@@ -5969,7 +5969,7 @@
             <Czech>Vozidlo je již nežije nebo na přistávací plocha pro vrtulník!</Czech>
             <Spanish>El vehiculo no esta vivo o en el helipad!</Spanish>
             <Russian>Транспортное средство уже не в живых или на вертолетной!</Russian>
-            <German>Das Fahrzeug wurde zerstört oder befindest sich nicht mehr auf dem Helikopterlandeplatz!</German>
+            <German>Das Fahrzeug wurde zerstört oder befindet sich nicht mehr auf dem Landeplatz!</German>
             <French>L'hélicoptère est détruit ou n'est plus sur l'héliport!</French>
             <Italian>Il veicolo non è più attivo sulla piazzola d'atterraggio!</Italian>
             <Portuguese>"A aeronave não está mais disponível no heliponto!</Portuguese>
@@ -5980,18 +5980,18 @@
             <Czech>Váš letadlo není opraveno a tankovat.</Czech>
             <Spanish>Tu aeronave esta reparado y lleno de combustible.</Spanish>
             <Russian>Ваш самолет не ремонтируются и заправляться.</Russian>
-            <German>Der flugzeug ist nun repariert und aufgetankt.</German>
+            <German>Das Luftfahrzeug ist nun repariert und aufgetankt</German>
             <French>Votre d`avion est maintenant réparé et ravitaillé</French>
             <Italian>L`aereo è stato riparato e rifornito di carburante.</Italian>
             <Portuguese>Sua aeronave está reparada e com o tanque cheio!</Portuguese>
             <Polish>Samolot został naprawiony i natankowany</Polish>
         </Key>
-        <Key ID="STR_Serive_Aircraft_NotNeeded">
-            <Original>There is no need servicing your aircraft!</Original>
+        <Key ID="STR_Service_Aircraft_NotNeeded">
+            <Original>There is no need to service your aircraft!</Original>
             <Czech>Není třeba opravovat své letadlo</Czech>
             <Spanish>No es necesario el mantenimiento de su aeronave</Spanish>
             <Russian>Не е необходимо обслужване на самолети</Russian>
-            <German>Es gibt keine Notwendigkeit, Ihre Flugzeug Wartung</German>
+            <German>Es ist nicht notwendig dein Luftfahrzeug zu warten</German>
             <French>Il n'y a pas besoin d'entretien de votre avion</French>
             <Italian>Non c'è bisogno di manutenzione il vostro aereo</Italian>
             <Portuguese>Não há necessidade de manutenção do avião</Portuguese>
