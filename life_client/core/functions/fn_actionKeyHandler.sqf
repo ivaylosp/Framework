@@ -121,7 +121,7 @@ if (playerSide isEqualTo civilian) then {
 };
 
 //Temp fail safe.
-if(life_action_inUse) then {
+if (life_action_inUse) then {
     [] spawn {
         sleep 60;
         life_action_inUse = false;
