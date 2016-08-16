@@ -7,7 +7,7 @@
     Master action key handler, handles requests for picking up various items and
     interacting with other players (Cops = Cop Menu for unrestrain,escort,stop escort, arrest (if near cop hq), etc).
 */
-private["_curObject","_isWater","_CrateModelNames","_crate","_fish","_animal","_whatIsIt","_handle","_swimmingAnimations","_isVehicle","_miscItems","_money","_list","_time"];
+private["_curObject","_isSwimming","_CrateModelNames","_crate","_fish","_animal","_whatIsIt","_handle","_swimmingAnimations","_isVehicle","_miscItems","_money","_list","_time"];
 
 if (life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
 if (life_interrupted) exitWith {life_interrupted = false};
@@ -20,13 +20,13 @@ _list = ["landVehicle","Ship","Air"];
 _isVehicle = if (KINDOF_ARRAY(_curObject,_list)) then {true} else {false};
 _miscItems = ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F","Land_Suitcase_F"];
 
-//This ensures that the player is in the water and swimming
-_swimmingAnimations = ["aswmpercmstpsnonwnondnon","aswmpercmstpsnonwnondnon_aswmpercmrunsnonwnondf","aswmpercmrunsnonwnondf","abswpercmrunsnonwnondf","abswpercmsprsnonwnondf","abswpercmrunsnonwnondl","abswpercmrunsnonwnondb","abswpercmwlksnonwnondb","abswpercmstpsnonwnondnon","abswpercmstpsnonwnondnon_abswpercmrunsnonwnondf","abswpercmstpsnonwnondnon_godown","abswpercmstpsnonwnondnon_goup","aswmpercmstpsnonwnondnon_goup","aswmpercmrunsnonwnondl","abswpercmwlksnonwnondl","abswpercmrunsnonwnondr","abswpercmwlksnonwnondr","abswpercmwlksnonwnondfr","aswmpercmwlksnonwnondfr","aswmpercmwlksnonwnondf","aswmpercmwlksnonwnondfl","aswmpercmrunsnonwnondb","aswmpercmwlksnonwnondb","aswmpercmrunsnonwnondr","abswpercmwlksnonwnondf","aswmpercmsprsnonwnondf","asswpercmstpsnonwnondnon"];
+//These animation checks ensure that the player is in the water and swimming
+_swimmingAnimations = ["advepercmstpsnonwrfldnon","asdvpercmstpsnonwnondnon","asdvpercmsprsnonwnondf","abdvpercmsprsnonwnondf","abdvpercmstpsnonwnondnon","abdvpercmrunsnonwnondb","abdvpercmrunsnonwnondl","abdvpercmrunsnonwnondr","abdvpercmrunsnonwnondbr","abdvpercmrunsnonwnondbl","abdvpercmrunsnonwnondfl","abdvpercmrunsnonwnondf","abdvpercmrunsnonwnondfr","abdvpercmstpsnonwnondnon_goup","advepercmstpsnonwnondnon","asdvpercmstpsnonwnondnon_godown","abdvpercmstpsnonwnondnon_turnr","abdvpercmstpsnonwnondnon_turnl","abdvpercmstpsnonwnondnon_godown","abdvpercmtacsnonwnondr","abdvpercmtacsnonwnondf","asdvpercmstpsnonwrfldnon","asdvpercmrunsnonwrfldf","asdvpercmsprsnonwrfldf","asdvpercmrunsnonwrfldr","asdvpercmrunsnonwrfldl","asdvpercmrunsnonwrfldb","asdvpercmstpsnonwrfldnon_godown","abdvpercmstpsnonwrfldnon","abdvpercmstpsnonwrfldnon_goup","asdvpercmrunsnonwrfldfr","asdvpercmstpsnonwrfldnon_turnr","asdvpercmstpsnonwrfldnon_turnl","abdvpercmstpsnonwrfldnon_turnr","abdvpercmstpsnonwrfldnon_turnl","abdvpercmrunsnonwrfldf","abdvpercmsprsnonwrfldf","abdvpercmrunsnonwrfldfl","abdvpercmrunsnonwrfldfr","abdvpercmrunsnonwrfldbr","abdvpercmrunsnonwrfldbl","abdvpercmrunsnonwrfldl","abdvpercmrunsnonwrfldr"];
 
-_isWater = false;
+_isSwimming = false;
 
 if (surfaceIsWater (visiblePositionASL player)) then {
-    _isWater =  AnimationState player in _swimmingAnimations;
+    _isSwimming =  AnimationState player in _swimmingAnimations;
 };
 
 //Handle COP menu while escorting
@@ -90,7 +90,7 @@ if (_curObject isKindOf "House_F" && {player distance _curObject < 12} || ((near
 };
 
 //Handle Fishing and Hunting
-if (_isWater) then {
+if (_isSwimming) then {
     _fish = (nearestObjects[player,(LIFE_SETTINGS(getArray,"animaltypes_fish")),3]) select 0;
     if (!isNil "_fish") then {
         if (!alive _fish) exitWith {
