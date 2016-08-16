@@ -10043,14 +10043,14 @@
             <Italian>Minaccia Spacciatore</Italian>
         </Key>
         <Key ID="STR_MAR_Service_helicopter">
-            <Original>Service Helicopter</Original>
-            <Czech>Service Vrtulník</Czech>
-            <French>Service d'hélicoptère</French>
-            <Spanish>Helicóptero de Servicio</Spanish>
-            <Russian></Russian>
-            <German>Heli Werkstatt</German>
-            <Portuguese>Serviço Aéreo</Portuguese>
-            <Polish>Serwisuj pojazd lotniczy</Polish>
+            <Original>Service Aircraft</Original>
+            <Czech>Service Letadlo</Czech>
+            <French>Service d'Avion</French>
+            <Spanish>Helicóptero de Aeronave</Spanish>
+            <Russian>Обслуживание воздушных судов</Russian>
+            <German>Flugzeug Werkstatt</German>
+            <Portuguese>Serviço Aeronave</Portuguese>
+            <Polish>Serwisuj pojazd Samolot</Polish>
             <Italian>Servizio Aereo</Italian>
         </Key>
         <Key ID="STR_MAR_Clothing_Store">

@@ -18,7 +18,7 @@ _aircraft = nearestObjects[getPos air_sp, ["Air"],15];
 if (count _aircraft isEqualTo 0) exitWith {hint localize "STR_Service_Aircraft_NoAir"};
 if (CASH < _serviceCost) exitWith {hint format[localize "STR_Service_Aircraft_NotEnough",_serviceCost]};
 _aircraft = _aircraft select 0;
-if (fuel _aircraft isEqualTo 1 && getDammage _aircraft isEqualTo 0) exitWith {hint localize "STR_Service_Aircraft_NotNeeded"};
+if (fuel _aircraft isEqualTo 1 && ([cursorTarget] call life_fnc_isDamaged) isEqualTo false) exitWith {hint localize "STR_Service_Aircraft_NotNeeded"};
 
 life_action_inUse = true;
 
